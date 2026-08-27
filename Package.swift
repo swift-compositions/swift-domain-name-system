@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-ietf/swift-rfc-1035.git", branch: "main"),
-        .package(url: "https://github.com/swift-foundations/swift-ip-address.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-ip-address.git", branch: "main"),
     ],
     targets: [
         .target(

@@ -1,7 +1,7 @@
 # .github/metadata.yaml
 description: "Provider-neutral DNS resolver capability for Swift."
 topics:
-  - foundations
+  - compositions
   - domain
   - dns
 homepage: "https://swift-institute.org"

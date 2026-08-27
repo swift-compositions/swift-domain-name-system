@@ -38,7 +38,7 @@ extension MyProvider: DNS.Resolving {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-foundations/swift-domain-name-system.git", branch: "main")
+    .package(url: "https://github.com/swift-compositions/swift-domain-name-system.git", branch: "main")
 ]
 ```
 
@@ -53,9 +53,9 @@ dependencies: [
 
 ## Related Packages
 
-- [swift-domain-name-system-kernel](https://github.com/swift-foundations/swift-domain-name-system-kernel) — the system DNS provider (`DNS.Resolver.System`), answering queries through the platform's own resolution policy.
+- [swift-domain-name-system-kernel](https://github.com/swift-compositions/swift-domain-name-system-kernel) — the system DNS provider (`DNS.Resolver.System`), answering queries through the platform's own resolution policy.
 - [swift-rfc-1035](https://github.com/swift-ietf/swift-rfc-1035) — the validated domain-name vocabulary queries are built from (re-exported).
-- [swift-ip-address](https://github.com/swift-foundations/swift-ip-address) — the canonical `IP.Address` result vocabulary (re-exported).
+- [swift-ip-address](https://github.com/swift-compositions/swift-ip-address) — the canonical `IP.Address` result vocabulary (re-exported).
 
 ## License
 
