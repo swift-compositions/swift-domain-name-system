@@ -1,3 +1,5 @@
+import IP_Address
+import RFC_1035
 import Testing
 
 @testable import Domain_Name_System
@@ -12,10 +14,11 @@ struct `DNS Query Tests` {
 extension `DNS Query Tests`.Unit {
     @Test
     func `query defaults to any family and no timeout`() throws(RFC_1035.Domain.Error) {
-        let query = DNS.Query(name: try RFC_1035.Domain("example.com"))
+        let name = try RFC_1035.Domain("example.com")
+        let query = DNS.Query(name: name)
         #expect(query.family == .any)
         #expect(query.timeout == nil)
-        #expect(query.name == (try RFC_1035.Domain("example.com")))
+        #expect(query.name == name)
     }
 
     @Test
@@ -58,7 +61,7 @@ extension Fixed {
     }
 }
 
-extension Fixed: DNS.Resolving {
+extension Fixed: DNS.Resolver.`Protocol` {
     func resolve(_ query: DNS.Query) async throws(Failure) -> [IP.Address] {
         answers
     }
@@ -66,7 +69,7 @@ extension Fixed: DNS.Resolving {
 
 private struct Failing: Sendable {}
 
-extension Failing: DNS.Resolving {
+extension Failing: DNS.Resolver.`Protocol` {
     func resolve(_ query: DNS.Query) async throws(Fixed.Failure) -> [IP.Address] {
         throw .unreachable
     }

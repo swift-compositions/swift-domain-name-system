@@ -32,7 +32,9 @@ let package = Package(
         .testTarget(
             name: "Domain Name System Tests",
             dependencies: [
-                "Domain Name System"
+                "Domain Name System",
+                .product(name: "RFC 1035", package: "swift-rfc-1035"),
+                .product(name: "IP Address", package: "swift-ip-address"),
             ]
         ),
     ],
